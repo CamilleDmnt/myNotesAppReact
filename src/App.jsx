@@ -10,15 +10,13 @@ import AddNoteForm from './components/AddNoteForm'
 
 
 function App() {
-  const [notes, setNotes] = useState([
-    { id: 1, text: "première note" },
-    { id: 2, text: "deuxième note" },
-    { id: 3, text: "troisième note" }
-  ]);
-  
-  //filterText = varible d'état
+  //filterText = variable d'état
   //setFilterText = fonction pour mettre à jour l'état
-  const[filterText, setFilterText] = useState('');
+  const [notes, setNotes, filterText, setFilterText] = useState([
+    // { id: 1, text: "première note" },
+    // { id: 2, text: "deuxième note" },
+    // { id: 3, text: "troisième note" }
+  ]);
 
   // FONCTION POUR AJOUTER UNE NOTE
   const addNote = (text) => {
