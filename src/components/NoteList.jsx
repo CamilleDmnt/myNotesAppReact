@@ -4,8 +4,8 @@ export default function NoteList({ notes, filterText, onRemoveBtn }) {
 
     // Filtrer les notes en fonction du texte filtré
     const filteredNotes = filterText ? notes.filter(note =>
-        note.text && note.text.toLowerCase().includes(filterText.toLowerCase())
-    ) : notes;
+        note.text.toLowerCase().includes(filterText.toLowerCase())
+    ) : notes
 
     // Générer les éléments LI pour chaque note filtrée
     const listNotes = filteredNotes.map((note, index) => (

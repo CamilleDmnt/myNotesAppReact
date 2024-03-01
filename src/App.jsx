@@ -30,8 +30,6 @@ function App() {
     console.log(newNote);
   }
 
-
-
   //FONCTION POUR SUPPRIMER UNE NOTE
   function onRemoveNoteBtnHandler(noteToDelete) {
 
@@ -40,6 +38,11 @@ function App() {
     //on garde toutes les notes qui ne sont pas celle à supprimer
     const newNote = notes.filter(note => note.id !== noteToDelete.id);
     setNotes(newNote); //mis à jour des notes
+  }
+
+  // Fonction pour gérer le  filtre de note
+  const handleFilterChange = (newFilterText) => {
+    setFilterText(newFilterText);
   }
 
   // LA VUE
@@ -52,8 +55,9 @@ function App() {
       <Counter totalNotes={notes.length} />
       
       {/* Passer la fonction de mise à jour de l'état du filtre */}
-      <Filters onFilterChange={setFilterText} /> 
-      
+      <Filters filterText={filterText} onFilterChange={handleFilterChange} /> 
+
+      {/* Passer filterText en tant que prop à NoteList */}
       <NoteList notes={notes} onRemoveBtn={onRemoveNoteBtnHandler} />
     </>
   )

@@ -1,7 +1,9 @@
 export default function Filters({onFilterChange}) {
-    const handleInputChange = (e) => {
-        //cela met à jour l'état du filtre avec la valeur de l'input
-        onFilterChange(e.target.value);
+    const handleInputChange = (event) => {
+        const newText = event.target.value;
+        // Appel de la fonction de filtrage des notes
+        onFilterChange(newText);
+        
     };
 
     return (
